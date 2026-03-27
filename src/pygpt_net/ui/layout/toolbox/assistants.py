@@ -52,11 +52,14 @@ class Assistants:
 
         # new
         nodes['assistants.new'] = QPushButton(QIcon(":/icons/add.svg"), "")
+        nodes['assistants.new'].setCursor(Qt.PointingHandCursor)
+        nodes['assistants.new'].setToolTip(trans('toolbox.assistants.new'))
         _cb_new = ctrl.assistant.editor.edit
         nodes['assistants.new'].clicked.connect(lambda checked=False, cb=_cb_new: cb())
 
         # import
         nodes['assistants.import'] = QPushButton(trans('assistant.import'))
+        nodes['assistants.import'].setCursor(Qt.PointingHandCursor)
         _cb_import = ctrl.assistant.batch.import_assistants
         nodes['assistants.import'].clicked.connect(lambda checked=False, cb=_cb_import: cb())
 
