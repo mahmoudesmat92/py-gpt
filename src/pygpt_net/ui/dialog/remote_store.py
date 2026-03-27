@@ -54,6 +54,7 @@ class RemoteStore:
         nodes['remote_store.btn.new'] = QPushButton(trans("dialog.remote_store.btn.new"))
         nodes['remote_store.btn.save'] = QPushButton(trans("dialog.remote_store.btn.save"))
         nodes['remote_store.btn.refresh_status'] = QPushButton(QIcon(":/icons/reload.svg"), "")
+        nodes['remote_store.btn.refresh_status'].setCursor(Qt.PointingHandCursor)
         nodes['remote_store.btn.close'] = QPushButton(trans("dialog.remote_store.btn.close"))
 
         nodes['remote_store.btn.refresh_status'].setToolTip(
