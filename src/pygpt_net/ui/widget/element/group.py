@@ -34,6 +34,7 @@ class CollapsedGroup(QWidget):
 
         # checkbox show/hide
         self.box = QCheckBox('Show/hide', self.window)
+        self.box.setCursor(Qt.PointingHandCursor)
         self.box.setMinimumHeight(30)
         self.box.setStyleSheet("font-weight: bold;")
         self.box.setChecked(value)
