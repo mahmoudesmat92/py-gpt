@@ -31,6 +31,7 @@ class CtxSearchInput(QLineEdit):
         # action for clearing the search
         self.clear_action = QAction(self)
         self.clear_action.setIcon(QIcon(":/icons/close.svg"))
+        self.clear_action.setToolTip(trans('action.clear'))
         self.clear_action.triggered.connect(self.clear_search_string)
         self.addAction(self.clear_action, QLineEdit.TrailingPosition)
         self.clear_action.setVisible(False)
@@ -97,6 +98,7 @@ class SearchInput(QLineEdit):
         # action for clearing the search
         self.clear_action = QAction(self)
         self.clear_action.setIcon(QIcon(":/icons/close.svg"))
+        self.clear_action.setToolTip(trans('action.clear'))
         self.clear_action.triggered.connect(self.clear_search_string)
         self.addAction(self.clear_action, QLineEdit.TrailingPosition)
         self.clear_action.setVisible(False)
