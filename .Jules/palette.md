@@ -1,0 +1,3 @@
+## 2024-05-24 - Missing Tooltips on Icon-Only Buttons
+**Learning:** Found several icon-only QPushButtons missing tooltips. In PySide6/Qt, icon-only buttons need tooltips set via `setToolTip(trans('...'))` to have an accessible name for screen readers, as per codebase memory.
+**Action:** Added missing tooltips to the 'New Preset' and 'New Assistant' buttons in the toolbox layout to improve accessibility.
