@@ -85,6 +85,7 @@ class AttachmentsCtx:
         self.window.ui.nodes[self.id] = AttachmentCtxList(self.window)
 
         self.window.ui.nodes['attachments_ctx.btn.clear'] = QPushButton(QIcon(":/icons/close.svg"), trans('attachments_uploaded.btn.clear'))
+        self.window.ui.nodes['attachments_ctx.btn.clear'].setToolTip(trans("attachments_uploaded.btn.clear"))
         self.window.ui.nodes['attachments_ctx.btn.clear'].clicked.connect(
             lambda: self.window.controller.chat.attachment.clear()
         )

@@ -57,6 +57,7 @@ class Models:
         """
         self.window.ui.nodes['models.editor.btn.new'] = \
             QPushButton(QIcon(":/icons/add.svg"), trans("dialog.models.editor.btn.new"))
+        self.window.ui.nodes['models.editor.btn.new'].setToolTip(trans("dialog.models.editor.btn.new"))
         self.window.ui.nodes['models.editor.btn.defaults.user'] = \
             QPushButton(trans("dialog.models.editor.btn.defaults.user"))
         self.window.ui.nodes['models.editor.btn.defaults.app'] = \

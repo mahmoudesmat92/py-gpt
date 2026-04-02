@@ -39,6 +39,7 @@ class ModelsImporter:
 
         self.window.ui.nodes['models.importer.btn.refresh'] = \
             QPushButton(QIcon(":/icons/reload.svg"), trans("dialog.models.importer.btn.refresh"))
+        self.window.ui.nodes['models.importer.btn.refresh'].setToolTip(trans("dialog.models.importer.btn.refresh"))
         self.window.ui.nodes['models.importer.btn.cancel'] = \
             QPushButton(trans("dialog.models.importer.btn.cancel"))
         self.window.ui.nodes['models.importer.btn.save'] = \
