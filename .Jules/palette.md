@@ -1,0 +1,3 @@
+## 2025-02-15 - Add tooltips to icon-only buttons
+**Learning:** Found an accessibility issue pattern across various UI components: icon-only `QPushButton` widgets (e.g. `QPushButton(QIcon(":/icons/add.svg"), "")`) were created without tooltips. This is critical because screen readers cannot interpret an icon without text, and sighted users might not know what an ambiguous icon does.
+**Action:** Always verify that every icon-only button instantiated without text receives a descriptive tooltip via `.setToolTip(trans('...'))` mapping to a translated string.
