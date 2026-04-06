@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing tooltips on icon-only buttons
+**Learning:** In PySide6/Qt, icon-only buttons (like `QPushButton(QIcon, "")`) lack accessible names if they don't have tooltips. This is a common pattern in the toolbars and side panels (e.g., adding presets or indexing). Adding `setToolTip()` is crucial for screen readers and new users who might not recognize the icon right away.
+**Action:** Always verify that every `QPushButton` instantiated without a text label explicitly calls `setToolTip(trans('...'))`.
