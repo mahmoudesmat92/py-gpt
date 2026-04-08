@@ -39,6 +39,7 @@ class AgentsWidget:
         :return: QWidget
         """
         new_btn = QPushButton(QIcon(":/icons/add.svg"), "", self.parent)
+        new_btn.setToolTip(trans('action.new'))
         new_btn.clicked.connect(self.action_new)
 
         self.list = AgentsList(self.parent, tool=self.tool, id=self.id)
