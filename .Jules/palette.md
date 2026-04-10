@@ -1,0 +1,3 @@
+## 2024-10-25 - Added Tooltips to Icon-Only Buttons
+**Learning:** PySide/Qt desktop UIs often contain `QPushButton` elements initialized with only an icon and an empty string (`""`). These icon-only buttons lack accessible names for screen readers and are completely opaque to visually impaired users, much like `<img>` tags without `alt` text or `<button>` without `aria-label` in web dev.
+**Action:** Always search for `QPushButton(QIcon` and check if `.setToolTip()` is chained or called nearby. Add `.setToolTip(trans('...'))` to give them an accessible name using the existing localization system.
