@@ -58,6 +58,7 @@ class Model:
         nodes[self.id] = combo
 
         nodes['prompt.model.settings'] = QPushButton(self._settings_icon, "")
+        nodes['prompt.model.settings'].setToolTip(trans("dialog.settings"))
         # Configure compact, borderless settings button aligned to the right
         icon_size = 20
         nodes['prompt.model.settings'].setFlat(True)
