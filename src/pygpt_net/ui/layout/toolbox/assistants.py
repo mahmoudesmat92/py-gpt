@@ -52,6 +52,7 @@ class Assistants:
 
         # new
         nodes['assistants.new'] = QPushButton(QIcon(":/icons/add.svg"), "")
+        nodes['assistants.new'].setToolTip(trans("assistant.new"))
         _cb_new = ctrl.assistant.editor.edit
         nodes['assistants.new'].clicked.connect(lambda checked=False, cb=_cb_new: cb())
 
