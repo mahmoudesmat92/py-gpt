@@ -68,6 +68,7 @@ class AttachmentsUploaded:
 
         self.window.ui.nodes['attachments_uploaded.btn.sync'] = SyncButton(trans('attachments_uploaded.btn.sync'), self.window)
         self.window.ui.nodes['attachments_uploaded.btn.clear'] = QPushButton(QIcon(":/icons/close.svg"), trans('attachments_uploaded.btn.clear'))
+        self.window.ui.nodes['attachments_uploaded.btn.clear'].setToolTip(trans('attachments_uploaded.btn.clear'))
         self.window.ui.nodes['attachments_uploaded.btn.clear'].clicked.connect(
             lambda: self.window.controller.assistant.files.clear()
         )
