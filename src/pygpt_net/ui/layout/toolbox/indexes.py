@@ -55,6 +55,7 @@ class Indexes:
         """
         nodes = self.window.ui.nodes
         nodes['indexes.new'] = QPushButton(self._settings_icon, "")
+        nodes['indexes.new'].setToolTip(trans('menu.config.settings'))
         # Configure compact, borderless settings button aligned to the right
         icon_size = 20
         nodes['indexes.new'].setFlat(True)
@@ -128,6 +129,7 @@ class Indexes:
         nodes['llama_index.mode.select'].setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
         nodes['indexes.new'] = QPushButton(self._settings_icon, "")
+        nodes['indexes.new'].setToolTip(trans('menu.config.settings'))
         # Configure compact, borderless settings button for options row
         icon_size = 20
         nodes['indexes.new'].setFlat(True)
