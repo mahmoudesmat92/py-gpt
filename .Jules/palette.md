@@ -1,0 +1,3 @@
+## 2025-02-28 - PySide6 Icon-Only Button Accessibility
+**Learning:** PySide6 allows creating icon-only `QPushButton`s using `QPushButton(QIcon, "")`. However, without accompanying text, these buttons lack accessible names and are invisible/unusable to screen-readers.
+**Action:** When creating icon-only buttons, always apply a tooltip using `.setToolTip(trans('...'))` to provide an accessible name and context for users.
