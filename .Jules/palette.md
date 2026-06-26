@@ -1,0 +1,3 @@
+## 2024-06-26 - Add Tooltips to Icon-Only Buttons
+**Learning:** In PySide6/Qt, buttons that consist only of an icon (`QPushButton(QIcon, "")`) do not inherently have an accessible name for screen readers. It is critical to add a tooltip via `setToolTip(trans('...'))` to these buttons so they are properly identified. This is a common pattern in the app's UI toolboxes that needs to be addressed for basic accessibility.
+**Action:** When adding or auditing icon-only buttons in PySide6 UI files, always ensure that `setToolTip` is called with a localized string to provide a text alternative.

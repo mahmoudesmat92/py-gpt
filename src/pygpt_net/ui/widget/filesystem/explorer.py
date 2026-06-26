@@ -638,6 +638,7 @@ class FileExplorer(QWidget):
         self.btn_clear.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
 
         self.btn_tool = QPushButton(QIcon(":/icons/db.svg"), "")
+        self.btn_tool.setToolTip(trans("tool.indexer.menu.config.settings"))
         self.btn_tool.setMaximumHeight(40)
         self.btn_tool.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
         self.btn_tool.clicked.connect(
