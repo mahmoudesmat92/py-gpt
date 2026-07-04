@@ -59,6 +59,7 @@ class Presets:
         nodes = self.window.ui.nodes
 
         nodes['preset.presets.new'] = QPushButton(QIcon(":/icons/add.svg"), "")
+        nodes['preset.presets.new'].setToolTip(trans("preset.new"))
         nodes['preset.presets.new'].clicked.connect(
             lambda _=False: self.window.controller.presets.editor.edit()
         )
