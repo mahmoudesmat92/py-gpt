@@ -18,6 +18,7 @@ from pygpt_net.core.types import (
     MODE_AGENT,
     MODE_EXPERT,
 )
+from pygpt_net.utils import trans
 from pygpt_net.ui.widget.element.labels import HelpLabel, TitleLabel
 from pygpt_net.ui.widget.lists.preset import PresetList
 
@@ -59,6 +60,7 @@ class Presets:
         nodes = self.window.ui.nodes
 
         nodes['preset.presets.new'] = QPushButton(QIcon(":/icons/add.svg"), "")
+        nodes['preset.presets.new'].setToolTip(trans('preset.new'))
         nodes['preset.presets.new'].clicked.connect(
             lambda _=False: self.window.controller.presets.editor.edit()
         )
