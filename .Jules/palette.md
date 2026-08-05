@@ -1,0 +1,3 @@
+## $(date +%Y-%m-%d) - [Tooltips on icon-only buttons]
+**Learning:** Found multiple instances where `QPushButton` with only an icon and an empty string label `""` lacked a tooltip. Without tooltips, these buttons lack accessible names, making them difficult to use for screen reader users or visually to understand their purpose without clicking.
+**Action:** Applied tooltips via `setToolTip(trans('...'))` to icon-only buttons throughout the toolbox elements (presets, assistants, model, indexes) and the file explorer. Future UI reviews should ensure all newly created icon-only buttons include an accessible tooltip label.
