@@ -61,6 +61,7 @@ class Model:
         # Configure compact, borderless settings button aligned to the right
         icon_size = 20
         nodes['prompt.model.settings'].setFlat(True)
+        nodes['prompt.model.settings'].setToolTip(trans('dialog.settings'))
         nodes['prompt.model.settings'].setStyleSheet("QPushButton { border: none; padding: 0; }")
         nodes['prompt.model.settings'].setIconSize(QSize(icon_size, icon_size))
         nodes['prompt.model.settings'].setFixedSize(icon_size, icon_size)

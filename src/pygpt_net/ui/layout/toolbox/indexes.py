@@ -58,6 +58,7 @@ class Indexes:
         # Configure compact, borderless settings button aligned to the right
         icon_size = 20
         nodes['indexes.new'].setFlat(True)
+        nodes['indexes.new'].setToolTip(trans('dialog.settings'))
         nodes['indexes.new'].setStyleSheet("QPushButton { border: none; background: transparent; padding: 0; }")
         nodes['indexes.new'].setIconSize(QSize(icon_size, icon_size))
         nodes['indexes.new'].setFixedSize(icon_size, icon_size)
@@ -131,6 +132,7 @@ class Indexes:
         # Configure compact, borderless settings button for options row
         icon_size = 20
         nodes['indexes.new'].setFlat(True)
+        nodes['indexes.new'].setToolTip(trans('dialog.settings'))
         nodes['indexes.new'].setStyleSheet("QPushButton { border: none; background: transparent; padding: 0; }")
         nodes['indexes.new'].setIconSize(QSize(icon_size, icon_size))
         nodes['indexes.new'].setFixedSize(icon_size, icon_size)
