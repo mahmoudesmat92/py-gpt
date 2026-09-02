@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Premium Vercel / Linear inspired background grid and lights */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+/* 3D Perspective Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+/* Isometric Card Rotation with light tracking */
+.isometric-3d-card {
+  transform: rotateX(15deg) rotateY(-15deg) rotateZ(0deg);
+  box-shadow: 
+    -10px 10px 20px rgba(0,0,0,0.5),
+    0 0 40px rgba(99, 102, 241, 0.15);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.isometric-3d-card:hover {
+  transform: rotateX(5deg) rotateY(-5deg) rotateZ(0deg) translateZ(20px);
+  box-shadow: 
+    -20px 20px 40px rgba(0,0,0,0.6),
+    0 0 60px rgba(56, 189, 248, 0.25);
+}
+
+/* Cyber Glass Panel */
+.cyber-glass, .cyber-glass-glow {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.cyber-glass {
+  background: rgba(10, 11, 14, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cyber-glass:hover, .cyber-glass.active {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(56, 189, 248, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(12, 14, 18, 0.85);
+}
+
+.cyber-glass-glow {
+  background: rgba(15, 17, 21, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.05);
+}
+
+.cyber-glass-glow:hover, .cyber-glass-glow.active {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(14, 165, 233, 0.25);
+  border-color: rgba(14, 165, 233, 0.35);
+  background: rgba(18, 20, 26, 0.95);
+}
+
+@keyframes cyberBorderSweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+.cyber-glass::after, .cyber-glass-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(56,189,248,0.8) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-out;
+  z-index: 10;
+}
+
+.cyber-glass:hover::after, .cyber-glass-glow:hover::after,
+.cyber-glass.active::after, .cyber-glass-glow.active::after {
+  opacity: 1;
+  animation: cyberBorderSweep 3s linear infinite;
+}
+
+/* Custom scrollbars for a clean dark desktop app aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060709;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e222b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #313847;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #030406;
+  color: #f1f5f9;
+  overflow: hidden;
+}
+
+/* Dynamic glowing light blur */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px);
+    opacity: 0.3;
+  }
+  33% {
+    transform: scale(1.15) translate(30px, -20px);
+    opacity: 0.45;
+  }
+  66% {
+    transform: scale(0.9) translate(-10px, 40px);
+    opacity: 0.35;
+  }
+}
+
+.animate-pulse-glow-1 {
+  animation: pulseGlow 14s infinite ease-in-out;
+}
+
+.animate-pulse-glow-2 {
+  animation: pulseGlow 18s infinite ease-in-out -4s;
+}
+
+/* Code container tweaks */
+pre {
+  background: #090a0f !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px;
+  overflow-x: auto;
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: #38bdf8;
+}
+

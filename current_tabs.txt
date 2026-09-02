@@ -1,0 +1,330 @@
+          <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-sky-400/[0.25] to-transparent blur-[0.3px] pointer-events-none z-20" />
+          
+          {/* Grouped Tab Selection */}
+          <div className="flex items-center gap-5 relative z-10 overflow-x-auto max-w-full no-scrollbar pt-2.5">
+            
+            {/* Group 1: Operations */}
+            <div className="flex items-center gap-1 bg-black/45 p-1 rounded-lg border border-white/[0.03] relative min-w-fit">
+              <span className="absolute -top-3.5 left-1.5 text-[8px] font-mono tracking-wider text-[#38bdf8]/75 uppercase font-bold">
+                OPERATIONS
+              </span>
+              <button
+                id="tab-dashboard-btn"
+                onClick={() => setActiveTab('dashboard')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'dashboard' ? 'text-[#38bdf8]' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'dashboard' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(56,189,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'dashboard' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-[#38bdf8] rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <LayoutDashboard className="w-3.5 h-3.5 text-[#38bdf8]" />
+                  <span>Dashboard</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-vfs-terminal-btn"
+                onClick={() => setActiveTab('vfs_terminal')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'vfs_terminal' ? 'text-[#38bdf8]' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'vfs_terminal' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(56,189,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'vfs_terminal' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-[#38bdf8] rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <SquareTerminal className="w-3.5 h-3.5" />
+                  <span>OS Terminal</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-terminal-btn"
+                onClick={() => setActiveTab('terminal')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'terminal' ? 'text-[#38bdf8]' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'terminal' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(56,189,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'terminal' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-[#38bdf8] rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <MessageSquare className="w-3.5 h-3.5 text-[#38bdf8]" />
+                  <span>Core Terminal</span>
+                </span>
+              </button>
+            </div>
+
+            <span className="text-slate-700 select-none text-[10px] pb-0.5">/</span>
+
+            {/* Group 2: Diagnostics */}
+            <div className="flex items-center gap-1 bg-black/45 p-1 rounded-lg border border-white/[0.03] relative min-w-fit">
+              <span className="absolute -top-3.5 left-1.5 text-[8px] font-mono tracking-wider text-indigo-400/80 uppercase font-bold">
+                DIAGNOSTICS & SYSTEM MAPS
+              </span>
+              
+              <button
+                id="tab-scoresheets-btn"
+                onClick={() => setActiveTab('scoresheets')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'scoresheets' ? 'text-indigo-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'scoresheets' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(129,140,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'scoresheets' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-indigo-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Score Sheets</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-diagnostics-btn"
+                onClick={() => setActiveTab('diagnostics')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'diagnostics' ? 'text-indigo-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'diagnostics' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(129,140,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'diagnostics' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-indigo-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Activity className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Diagnostics</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-tactical-btn"
+                onClick={() => setActiveTab('tactical')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'tactical' ? 'text-indigo-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'tactical' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(129,140,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'tactical' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-indigo-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Compass className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Tactical Map</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-energy-btn"
+                onClick={() => setActiveTab('energy')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'energy' ? 'text-indigo-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'energy' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(129,140,248,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'energy' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-indigo-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Energy Grid</span>
+                </span>
+              </button>
+            </div>
+
+            <span className="text-slate-700 select-none text-[10px] pb-0.5">/</span>
+
+            {/* Group 3: Creative / Workspace Utilities */}
+            <div className="flex items-center gap-1 bg-black/45 p-1 rounded-lg border border-white/[0.03] relative min-w-fit">
+              <span className="absolute -top-3.5 left-1.5 text-[8px] font-mono tracking-wider text-purple-400/80 uppercase font-bold">
+                WORKSPACE CO-PILOTS
+              </span>
+
+              <button
+                id="tab-notepad-btn"
+                onClick={() => setActiveTab('notepad')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'notepad' ? 'text-purple-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'notepad' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(192,132,252,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'notepad' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-purple-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <FileText className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Notepad</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-painter-btn"
+                onClick={() => setActiveTab('painter')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'painter' ? 'text-purple-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'painter' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(192,132,252,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'painter' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-purple-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <Brush className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Sketchpad</span>
+                </span>
+              </button>
+
+              <button
+                id="tab-skills-btn"
+                onClick={() => setActiveTab('skills')}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-[11px] font-bold font-sans transition-all duration-300 relative ${
+                  activeTab === 'skills' ? 'text-purple-400' : 'text-slate-500 hover:text-slate-300'
+                }`}
+              >
+                {activeTab === 'skills' && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    className="absolute inset-0 bg-white/[0.04] border border-white/[0.06] rounded-md shadow-[0_0_12px_rgba(192,132,252,0.06)] z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {activeTab === 'skills' && (
+                  <motion.span
+                    layoutId="activeTabBottomLine"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-purple-400 rounded z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  <FolderSync className="w-3.5 h-3.5 text-purple-400" />
+                  <span>Skills Sync</span>
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <div className="flex items-center gap-2 relative z-10">
+            <button
+              onClick={() => setIsEgyptianArabic(!isEgyptianArabic)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all duration-300 text-[10px] font-bold tracking-wider ${
+                isEgyptianArabic 
+                  ? 'bg-amber-500/20 border-amber-500/50 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.3)]'
+                  : 'bg-black/20 border-white/[0.05] text-slate-400 hover:bg-white/[0.1] hover:text-slate-300'
+              }`}
+              title="Toggle Egyptian Arabic Mode"
+            >
+              <span className="text-[12px]">{isEgyptianArabic ? '🇪🇬' : '🌐'}</span>
+              <span>{isEgyptianArabic ? 'AR-EG' : 'EN'}</span>
+            </button>
+            <button
+              id="toggle-config-btn"
+              onClick={() => setShowConfig(!showConfig)}
+              className={`p-2 rounded-lg border transition-all duration-300 ${
+                showConfig 
+                  ? 'bg-gradient-to-r from-sky-950/20 to-indigo-950/20 border-sky-500/20 text-[#38bdf8] shadow-[0_0_15px_rgba(56,189,248,0.15)]' 
+                  : 'bg-black/20 border-white/[0.03] text-slate-500 hover:border-white/[0.08] hover:text-slate-300'
+              }`}
+              title="Toggle engine configs"
+            >
+              <Settings className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Tab Body View */}

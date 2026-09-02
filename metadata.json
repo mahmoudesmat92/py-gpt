@@ -1,0 +1,11 @@
+{
+  "name": "Mody OS",
+  "description": "An AI Operating System that orchestrates multiple AI models, local tools, cloud services, automation engines, and knowledge databases.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

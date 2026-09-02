@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mody OS</title>
+    <meta name="description" content="An AI Operating System that orchestrates multiple AI models, local tools, cloud services, automation engines, and knowledge databases." />
+    <meta property="og:title" content="Mody OS" />
+    <meta property="og:description" content="An AI Operating System that orchestrates multiple AI models, local tools, cloud services, automation engines, and knowledge databases." />
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var currentFetch = typeof originalFetch === 'function' ? originalFetch.bind(window) : originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return currentFetch;
+            },
+            set: function(fn) {
+              currentFetch = typeof fn === 'function' ? fn.bind(window) : fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('[Mody OS] fetch descriptor setup warning:', e);
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#0f1115] text-[#e2e8f0] overflow-hidden select-none">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
