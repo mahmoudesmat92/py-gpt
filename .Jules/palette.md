@@ -1,0 +1,1 @@
+## 2025-01-20 - Add Tooltips to Icon-Only Buttons\n**Learning:** PySide6/Qt icon-only buttons require manual tooltips via `setToolTip` to provide an accessible name for screen readers, unlike some web frameworks where `aria-label` might be forced by linters.\n**Action:** Always verify that `QPushButton(QIcon, "")` has an accompanying `setToolTip(trans('...'))` call.
