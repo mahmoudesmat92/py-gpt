@@ -20,6 +20,53 @@ from tests.mocks import mock_window
 from pygpt_net.controller import Files
 
 
+def test_touch_file_not_force(mock_window):
+    """Test touch file (not force)"""
+    files = Files(mock_window)
+    mock_window.ui.dialog['create'] = MagicMock()
+
+    files.touch_file('/test/path', 'test.txt', force=False)
+
+    assert mock_window.ui.dialog['create'].id == 'touch'
+    mock_window.ui.dialog['create'].input.setText.assert_called_once_with("")
+    assert mock_window.ui.dialog['create'].current == '/test/path'
+    mock_window.ui.dialog['create'].show.assert_called_once_with()
+    mock_window.ui.dialog['create'].input.setFocus.assert_called_once_with()
+
+
+@patch('builtins.open', new_callable=MagicMock)
+def test_touch_file_force(mock_open, mock_window):
+    """Test touch file (force)"""
+    files = Files(mock_window)
+    mock_window.ui.dialog['create'] = MagicMock()
+    mock_window.update_status = MagicMock()
+    files.update_explorer = MagicMock()
+
+    files.touch_file('/test/path', 'test.txt', force=True)
+
+    mock_window.ui.dialog['create'].close.assert_called_once_with()
+    mock_open.assert_called_once_with(os.path.join('/test/path', 'test.txt'), 'a')
+    mock_open.return_value.close.assert_called_once_with()
+
+    mock_window.update_status.assert_called_once_with(
+        f"[OK] Created file: {os.path.join('/test/path', 'test.txt')}"
+    )
+    files.update_explorer.assert_called_once_with()
+
+
+@patch('builtins.open', side_effect=Exception('Test exception'))
+def test_touch_file_exception(mock_open, mock_window):
+    """Test touch file (exception)"""
+    files = Files(mock_window)
+    mock_window.ui.dialog['create'] = MagicMock()
+    mock_window.core.debug.log = MagicMock()
+
+    files.touch_file('/test/path', 'test.txt', force=True)
+
+    mock_window.core.debug.log.assert_called_once()
+    assert isinstance(mock_window.core.debug.log.call_args[0][0], Exception)
+
+
 def test_delete(mock_window):
     """Test delete"""
     files = Files(mock_window)
