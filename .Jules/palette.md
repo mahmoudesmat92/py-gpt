@@ -1,0 +1,3 @@
+## 2024-06-25 - Icon-only buttons accessibility
+**Learning:** Found an accessibility issue pattern specific to PySide6/Qt app components: icon-only `QPushButton` components (`QPushButton(QIcon("..."), "")`) are frequently missing `setToolTip` definitions. Without tooltips, these icon-only buttons lack screen reader context (accessible name) and leave mouse users guessing about their function (like "New Assistant" or "Open Indexer").
+**Action:** Always ensure any newly added or discovered icon-only `QPushButton` has a `setToolTip(trans('...'))` mapped to a valid localization key to maintain UX and a11y standards.
