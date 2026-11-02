@@ -220,7 +220,7 @@ export default function Sidebar({
             id="new-context-btn"
             onClick={() => onCreateSession(activeMode)}
             className="p-1.5 rounded-md bg-white/[0.03] hover:bg-[#38bdf8] hover:text-black hover:shadow-[0_0_12px_rgba(56,189,248,0.5)] text-[#38bdf8] border border-white/[0.06] transition-all duration-300 flex items-center justify-center"
-            title="Create new context thread"
+            title="Create new context thread" aria-label="Create new context thread"
           >
             <Plus className="w-3 h-3" />
           </button>
@@ -314,14 +314,14 @@ export default function Sidebar({
                                 <button
                                   onClick={(e) => handleSaveRename(session.id, e)}
                                   className="p-1 hover:text-[#10b981] text-slate-500 rounded transition-colors"
-                                  title="Save title"
+                                  title="Save title" aria-label="Save title"
                                 >
                                   <Check className="w-3.5 h-3.5" />
                                 </button>
                                 <button
                                   onClick={handleCancelRename}
                                   className="p-1 hover:text-[#ef4444] text-slate-500 rounded transition-colors"
-                                  title="Cancel"
+                                  title="Cancel" aria-label="Cancel"
                                 >
                                   <X className="w-3.5 h-3.5" />
                                 </button>
@@ -331,7 +331,7 @@ export default function Sidebar({
                                 <button
                                   onClick={(e) => handleStartRename(session, e)}
                                   className="p-1 hover:text-[#38bdf8] text-slate-500 rounded transition-colors"
-                                  title="Rename thread"
+                                  title="Rename thread" aria-label="Rename thread"
                                 >
                                   <Edit2 className="w-3.5 h-3.5" />
                                 </button>
@@ -341,7 +341,7 @@ export default function Sidebar({
                                     onDeleteSession(session.id);
                                   }}
                                   className="p-1 hover:text-[#ef4444] text-slate-500 rounded transition-colors"
-                                  title="Delete thread"
+                                  title="Delete thread" aria-label="Delete thread"
                                 >
                                   <Trash2 className="w-3.5 h-3.5" />
                                 </button>

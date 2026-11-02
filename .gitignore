@@ -142,3 +142,5 @@ dmypy.json
 /AppDir
 /appimage-build
 *.squashfs
+node_modules
+node_modules/
