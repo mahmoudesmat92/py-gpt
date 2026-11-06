@@ -25,6 +25,7 @@ export default function QuickActionsMenu({ onSummarize, onClearCodeBlocks, onTog
             <button
               onClick={() => { onSummarize(); setIsOpen(false); }}
               className="flex items-center gap-3 px-3 py-2 text-[10px] font-mono text-slate-300 hover:text-[#38bdf8] hover:bg-white/[0.02] rounded-lg transition-colors text-left"
+              aria-label="Summarize context"
             >
               <List className="w-3.5 h-3.5" />
               SUMMARIZE CONTEXT
@@ -32,6 +33,7 @@ export default function QuickActionsMenu({ onSummarize, onClearCodeBlocks, onTog
             <button
               onClick={() => { onClearCodeBlocks(); setIsOpen(false); }}
               className="flex items-center gap-3 px-3 py-2 text-[10px] font-mono text-slate-300 hover:text-rose-400 hover:bg-white/[0.02] rounded-lg transition-colors text-left"
+              aria-label="Clear code blocks"
             >
               <Trash2 className="w-3.5 h-3.5" />
               CLEAR CODE BLOCKS
@@ -39,6 +41,7 @@ export default function QuickActionsMenu({ onSummarize, onClearCodeBlocks, onTog
             <button
               onClick={() => { onToggleTheme(); setIsOpen(false); }}
               className="flex items-center gap-3 px-3 py-2 text-[10px] font-mono text-slate-300 hover:text-amber-400 hover:bg-white/[0.02] rounded-lg transition-colors text-left"
+              aria-label="Toggle accent"
             >
               <PaintBucket className="w-3.5 h-3.5" />
               TOGGLE ACCENT
@@ -49,6 +52,7 @@ export default function QuickActionsMenu({ onSummarize, onClearCodeBlocks, onTog
 
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close quick actions menu" : "Open quick actions menu"}
         className={`p-3 rounded-full flex items-center justify-center transition-all duration-300 border shadow-lg ${
           isOpen 
             ? 'bg-[#38bdf8] text-black border-[#38bdf8] shadow-[0_0_20px_rgba(56,189,248,0.4)]' 
